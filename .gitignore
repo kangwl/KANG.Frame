@@ -25,3 +25,7 @@
 /IDAL/KANG.IDAL/obj/Debug
 /UI/KANG.Web/*.user
 /DB/DB.SqlServer/*.user
+/Common/XK.Common/bin/Debug
+/Common/XK.Common/bin/Release
+/Common/XK.Common/obj/Debug
+/Common/XK.Common/obj/Release

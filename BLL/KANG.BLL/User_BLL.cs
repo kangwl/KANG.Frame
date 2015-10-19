@@ -1,6 +1,4 @@
 ﻿using KANG.BLL.Map;
-using KANG.IDAL;
-using KANG.MODEL.Enum;
 
 namespace KANG.BLL {
 
