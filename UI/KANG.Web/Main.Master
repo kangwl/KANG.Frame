@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="KANG.Web.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/bs.alert.js"></script>
+    <script src="/Scripts/bs.modal.js"></script>
+    <script src="/Scripts/bootbox.min.js"></script>
+    <script src="/Scripts/myJQUtils.js"></script>
+    <link href="/WebControls/Datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <script src="/WebControls/Datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/WebControls/Datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <style>
+        html,body{background:#f1f1f1 url(data:image/gif;base64,R0lGODlhBgAGAIAAAPPz8+bm5iH5BAAAAAAALAAAAAAGAAYAAAIJRI52aroY2lsFADs=); }
+
+        /*页脚固定 HTML START*/
+         html{ position: relative;min-height: 100%;}
+        #foot{ position: absolute;bottom: 0;width: 100%;margin-bottom: 0;}
+        #foot_content{line-height: 50px;text-align: center}
+        /*页脚固定 HTML END*/
+ 
+    </style>
+    <script>
+         
+        window.onload = function() {
+            if (myJQUtil.isHtml5()) {
+            } else {
+                var downloadChrome = "你的浏览器较旧，建议升级，请 <a style=\"font-weight:800\" href=\"http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_v44.0.2403.157_Setup.1440142013.exe\">点此</a> 下载安装浏览器后浏览";
+                //document.write(downloadChrome);
+                $.bsAlertWarn(downloadChrome);
+            }
+        }
+
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-default navbar-custom navbar-top-none" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><span class="glyphicon glyphicon-leaf"></span> &nbsp;API</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="headnav" class="nav navbar-nav">
+                        <li><a href="">主页</a></li>
+                        <li><a href="">帮助</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="">首页</a></li>
+                                <li class="divider"></li>
+                                <li><a href="">退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <div id="foot" class="navbar navbar-default">
+        <div id="foot_content">
+            All Rights Reserved.
+        </div>
+    </div>
+    <script>
+        //bootbox 语言
+        bootbox.setLocale("zh_CN"); 
+    </script>
+</body>
+</html>

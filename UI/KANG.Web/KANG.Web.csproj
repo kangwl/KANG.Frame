@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,18 +62,748 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\log4net_n.xml" />
+    <Content Include="Config\log4net_s.xml" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Index.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Page\Account\Login.aspx" />
+    <Content Include="Scripts\alertMessageBS.js" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\bs.alert.js" />
+    <Content Include="Scripts\bs.modal.js" />
+    <Content Include="Scripts\myJQDialog.js" />
+    <Content Include="Scripts\myJQDrag.js" />
+    <Content Include="Scripts\myJQUtils.js" />
+    <Content Include="Scripts\replaceElementUtil.js" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.min.css" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="WebControls\Datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="WebControls\Datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="WebControls\Datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="WebControls\Datepicker\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="WebControls\Datepicker\test.aspx" />
+    <Content Include="WebControls\FlashUploadify.ascx" />
+    <Content Include="WebControls\Html5UploadControl.ascx" />
+    <Content Include="WebControls\Html5Upload\css\fileinput.css" />
+    <Content Include="WebControls\Html5Upload\css\fileinput.min.css" />
+    <Content Include="WebControls\Html5Upload\img\loading-sm.gif" />
+    <Content Include="WebControls\Html5Upload\img\loading.gif" />
+    <Content Include="WebControls\Html5Upload\js\fileinput.js" />
+    <Content Include="WebControls\Html5Upload\js\fileinput.min.js" />
+    <Content Include="WebControls\Html5Upload\js\fileinput_locale_zh-TW.js" />
+    <Content Include="WebControls\Html5Upload\js\fileinput_locale_zh.js" />
+    <Content Include="WebControls\JPlayer\dist\add-on\jplayer.playlist.js" />
+    <Content Include="WebControls\JPlayer\dist\add-on\jplayer.playlist.min.js" />
+    <Content Include="WebControls\JPlayer\dist\add-on\jquery.jplayer.inspector.js" />
+    <Content Include="WebControls\JPlayer\dist\add-on\jquery.jplayer.inspector.min.js" />
+    <Content Include="WebControls\JPlayer\dist\jplayer\jquery.jplayer.js" />
+    <Content Include="WebControls\JPlayer\dist\jplayer\jquery.jplayer.min.js" />
+    <Content Include="WebControls\JPlayer\dist\jplayer\jquery.jplayer.swf" />
+    <Content Include="WebControls\JPlayer\dist\popcorn\popcorn.jplayer.js" />
+    <Content Include="WebControls\JPlayer\dist\popcorn\popcorn.jplayer.min.js" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\css\jplayer.blue.monday.css" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\css\jplayer.blue.monday.min.css" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\image\jplayer.blue.monday.jpg" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\image\jplayer.blue.monday.seeking.gif" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\image\jplayer.blue.monday.video.play.png" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.playlist.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.single.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.stream.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.video.playlist.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\blue.monday\mustache\jplayer.blue.monday.video.single.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\css\jplayer.pink.flag.css" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\css\jplayer.pink.flag.min.css" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\image\jplayer.pink.flag.jpg" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\image\jplayer.pink.flag.seeking.gif" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\image\jplayer.pink.flag.video.play.png" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.playlist.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.single.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.stream.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.video.playlist.html" />
+    <Content Include="WebControls\JPlayer\dist\skin\pink.flag\mustache\jplayer.pink.flag.video.single.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01-android.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01-supplied-mp3.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01-video-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01-video-supplied-m4v.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01-video-supplied-rtmpv.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01-video.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-01.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-02-jPlayerPlaylist.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-02-media-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-02-media.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-02-multi.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-02-video.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-02.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-03-together.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-03-video.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-03.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-08.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-09-popcorn-video-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\demo-09-popcorn-video.html" />
+    <Content Include="WebControls\JPlayer\examples\blue.monday\jPlayer-tester.html" />
+    <Content Include="WebControls\JPlayer\examples\other\demo-04.html" />
+    <Content Include="WebControls\JPlayer\examples\other\demo-05.html" />
+    <Content Include="WebControls\JPlayer\examples\other\demo-07.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01-android.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01-supplied-mp3.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01-video-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01-video-supplied-m4v.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01-video-supplied-rtmpv.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01-video.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-01.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-02-jPlayerPlaylist.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-02-media-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-02-media.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-02-multi.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-02-video.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-02.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-03-together.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-03-video.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-03.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-08.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-09-popcorn-video-solution-flash-html.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\demo-09-popcorn-video.html" />
+    <Content Include="WebControls\JPlayer\examples\pink.flag\jPlayer-tester.html" />
+    <Content Include="WebControls\JPlayer\Gruntfile.js" />
+    <Content Include="WebControls\JPlayer\lib\aurora\aac.js" />
+    <Content Include="WebControls\JPlayer\lib\aurora\aurora.js" />
+    <Content Include="WebControls\JPlayer\lib\aurora\flac.js" />
+    <Content Include="WebControls\JPlayer\lib\aurora\mp3.js" />
+    <Content Include="WebControls\JPlayer\lib\aurora\ogg.js" />
+    <Content Include="WebControls\JPlayer\lib\aurora\opus.js" />
+    <Content Include="WebControls\JPlayer\lib\aurora\vorbis.js" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\js\circle.player.js" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\js\jquery.grab.js" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\js\jquery.transform2d.js" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\js\mod.csstransforms.min.js" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\skin\bgr.jpg" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\skin\buffer.png" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\skin\circle.player.css" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\skin\controls.jpg" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\skin\progress.png" />
+    <Content Include="WebControls\JPlayer\lib\circle-player\skin\progress_sprite.jpg" />
+    <Content Include="WebControls\JPlayer\lib\jquery.min.js" />
+    <Content Include="WebControls\JPlayer\lib\popcorn.ie8.js" />
+    <Content Include="WebControls\JPlayer\lib\popcorn.js" />
+    <Content Include="WebControls\JPlayer\lib\popcorn.player.js" />
+    <Content Include="WebControls\JPlayer\lib\popcorn.subtitle.js" />
+    <Content Include="WebControls\JPlayer\MIT-LICENSE.txt" />
+    <Content Include="WebControls\JPlayer\src\javascript\add-on\jplayer.playlist.js" />
+    <Content Include="WebControls\JPlayer\src\javascript\add-on\jquery.jplayer.inspector.js" />
+    <Content Include="WebControls\JPlayer\src\javascript\jplayer\jquery.jplayer.js" />
+    <Content Include="WebControls\JPlayer\src\javascript\popcorn\popcorn.jplayer.js" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\image\jplayer.blue.monday.jpg" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\image\jplayer.blue.monday.seeking.gif" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\image\jplayer.blue.monday.video.play.png" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\mustache\jplayer.blue.monday.audio.playlist.html" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\mustache\jplayer.blue.monday.audio.single.html" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\mustache\jplayer.blue.monday.audio.stream.html" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\mustache\jplayer.blue.monday.video.playlist.html" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\mustache\jplayer.blue.monday.video.single.html" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\image\jplayer.pink.flag.jpg" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\image\jplayer.pink.flag.seeking.gif" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\image\jplayer.pink.flag.video.play.png" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\mustache\jplayer.pink.flag.audio.playlist.html" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\mustache\jplayer.pink.flag.audio.single.html" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\mustache\jplayer.pink.flag.audio.stream.html" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\mustache\jplayer.pink.flag.video.playlist.html" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\mustache\jplayer.pink.flag.video.single.html" />
+    <Content Include="WebControls\Select\css\bootstrap-select.css" />
+    <Content Include="WebControls\Select\css\bootstrap-select.min.css" />
+    <Content Include="WebControls\Select\js\bootstrap-select.js" />
+    <Content Include="WebControls\Select\js\bootstrap-select.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-da_DK.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-de_DE.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-en_US.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-en_US.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-es_CL.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-eu.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-eu.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-it_IT.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="WebControls\Select\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="WebControls\Select\test.aspx" />
+    <Content Include="WebControls\Testc.ascx" />
+    <Content Include="WebControls\Test\html5upload.aspx" />
+    <Content Include="WebControls\Test\img\upload_img.png" />
+    <Content Include="WebControls\Test\ueeditor.aspx" />
+    <Content Include="WebControls\Test\uploadify.aspx" />
+    <Content Include="WebControls\UEditor.ascx" />
+    <Content Include="WebControls\ueditor\dialogs\anchor\anchor.html" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\attachment.css" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\attachment.html" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\attachment.js" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\bg.png" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\icons.png" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\image.png" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\progress.png" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\success.gif" />
+    <Content Include="WebControls\ueditor\dialogs\attachment\images\success.png" />
+    <Content Include="WebControls\ueditor\dialogs\background\background.css" />
+    <Content Include="WebControls\ueditor\dialogs\background\background.html" />
+    <Content Include="WebControls\ueditor\dialogs\background\background.js" />
+    <Content Include="WebControls\ueditor\dialogs\background\images\bg.png" />
+    <Content Include="WebControls\ueditor\dialogs\background\images\success.png" />
+    <Content Include="WebControls\ueditor\dialogs\charts\chart.config.js" />
+    <Content Include="WebControls\ueditor\dialogs\charts\charts.css" />
+    <Content Include="WebControls\ueditor\dialogs\charts\charts.html" />
+    <Content Include="WebControls\ueditor\dialogs\charts\charts.js" />
+    <Content Include="WebControls\ueditor\dialogs\charts\images\charts0.png" />
+    <Content Include="WebControls\ueditor\dialogs\charts\images\charts1.png" />
+    <Content Include="WebControls\ueditor\dialogs\charts\images\charts2.png" />
+    <Content Include="WebControls\ueditor\dialogs\charts\images\charts3.png" />
+    <Content Include="WebControls\ueditor\dialogs\charts\images\charts4.png" />
+    <Content Include="WebControls\ueditor\dialogs\charts\images\charts5.png" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\emotion.css" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\emotion.html" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\emotion.js" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\0.gif" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="WebControls\ueditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="WebControls\ueditor\dialogs\gmap\gmap.html" />
+    <Content Include="WebControls\ueditor\dialogs\help\help.css" />
+    <Content Include="WebControls\ueditor\dialogs\help\help.html" />
+    <Content Include="WebControls\ueditor\dialogs\help\help.js" />
+    <Content Include="WebControls\ueditor\dialogs\image\image.css" />
+    <Content Include="WebControls\ueditor\dialogs\image\image.html" />
+    <Content Include="WebControls\ueditor\dialogs\image\image.js" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\bg.png" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\icons.gif" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\icons.png" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\image.png" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\progress.png" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\success.gif" />
+    <Content Include="WebControls\ueditor\dialogs\image\images\success.png" />
+    <Content Include="WebControls\ueditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="WebControls\ueditor\dialogs\internal.js" />
+    <Content Include="WebControls\ueditor\dialogs\link\link.html" />
+    <Content Include="WebControls\ueditor\dialogs\map\map.html" />
+    <Content Include="WebControls\ueditor\dialogs\map\show.html" />
+    <Content Include="WebControls\ueditor\dialogs\music\music.css" />
+    <Content Include="WebControls\ueditor\dialogs\music\music.html" />
+    <Content Include="WebControls\ueditor\dialogs\music\music.js" />
+    <Content Include="WebControls\ueditor\dialogs\preview\preview.html" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\size.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="WebControls\ueditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="WebControls\ueditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="WebControls\ueditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="WebControls\ueditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="WebControls\ueditor\dialogs\spechars\spechars.html" />
+    <Content Include="WebControls\ueditor\dialogs\spechars\spechars.js" />
+    <Content Include="WebControls\ueditor\dialogs\table\dragicon.png" />
+    <Content Include="WebControls\ueditor\dialogs\table\edittable.css" />
+    <Content Include="WebControls\ueditor\dialogs\table\edittable.html" />
+    <Content Include="WebControls\ueditor\dialogs\table\edittable.js" />
+    <Content Include="WebControls\ueditor\dialogs\table\edittd.html" />
+    <Content Include="WebControls\ueditor\dialogs\table\edittip.html" />
+    <Content Include="WebControls\ueditor\dialogs\template\config.js" />
+    <Content Include="WebControls\ueditor\dialogs\template\images\bg.gif" />
+    <Content Include="WebControls\ueditor\dialogs\template\images\pre0.png" />
+    <Content Include="WebControls\ueditor\dialogs\template\images\pre1.png" />
+    <Content Include="WebControls\ueditor\dialogs\template\images\pre2.png" />
+    <Content Include="WebControls\ueditor\dialogs\template\images\pre3.png" />
+    <Content Include="WebControls\ueditor\dialogs\template\images\pre4.png" />
+    <Content Include="WebControls\ueditor\dialogs\template\template.css" />
+    <Content Include="WebControls\ueditor\dialogs\template\template.html" />
+    <Content Include="WebControls\ueditor\dialogs\template\template.js" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\bg.png" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\file-icons.png" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\icons.gif" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\icons.png" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\image.png" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\progress.png" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\success.gif" />
+    <Content Include="WebControls\ueditor\dialogs\video\images\success.png" />
+    <Content Include="WebControls\ueditor\dialogs\video\video.css" />
+    <Content Include="WebControls\ueditor\dialogs\video\video.html" />
+    <Content Include="WebControls\ueditor\dialogs\video\video.js" />
+    <Content Include="WebControls\ueditor\dialogs\webapp\webapp.html" />
+    <Content Include="WebControls\ueditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="WebControls\ueditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="WebControls\ueditor\dialogs\wordimage\tangram.js" />
+    <Content Include="WebControls\ueditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="WebControls\ueditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="WebControls\ueditor\index.html" />
+    <Content Include="WebControls\ueditor\lang\en\en.js" />
+    <Content Include="WebControls\ueditor\lang\en\images\addimage.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\background.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\button.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\copy.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\deletedisable.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\deleteenable.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\listbackground.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\localimage.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\music.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="WebControls\ueditor\lang\en\images\upload.png" />
+    <Content Include="WebControls\ueditor\lang\zh-cn\images\copy.png" />
+    <Content Include="WebControls\ueditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="WebControls\ueditor\lang\zh-cn\images\music.png" />
+    <Content Include="WebControls\ueditor\lang\zh-cn\images\upload.png" />
+    <Content Include="WebControls\ueditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="WebControls\ueditor\net\test.html" />
+    <Content Include="WebControls\ueditor\themes\default\css\ueditor.css" />
+    <Content Include="WebControls\ueditor\themes\default\css\ueditor.min.css" />
+    <Content Include="WebControls\ueditor\themes\default\dialogbase.css" />
+    <Content Include="WebControls\ueditor\themes\default\images\anchor.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\arrow.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\arrow_down.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\arrow_up.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\button-bg.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\charts.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\cursor_h.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\cursor_h.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\cursor_v.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\cursor_v.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\filescan.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\highlighted.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\icons-all.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\icons.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\icons.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\loaderror.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\loading.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\lock.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\pagebreak.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\scale.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\sortable.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\spacer.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\sparator_v.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\table-cell-align.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\upload.png" />
+    <Content Include="WebControls\ueditor\themes\default\images\videologo.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\word.gif" />
+    <Content Include="WebControls\ueditor\themes\default\images\wordpaste.png" />
+    <Content Include="WebControls\ueditor\themes\iframe.css" />
+    <Content Include="WebControls\ueditor\third-party\codemirror\codemirror.css" />
+    <Content Include="WebControls\ueditor\third-party\codemirror\codemirror.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\highcharts.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\data.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\map.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="WebControls\ueditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="WebControls\ueditor\third-party\jquery-1.10.2.js" />
+    <Content Include="WebControls\ueditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="WebControls\ueditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="WebControls\ueditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="WebControls\ueditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="WebControls\ueditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="WebControls\ueditor\third-party\video-js\video-js.css" />
+    <Content Include="WebControls\ueditor\third-party\video-js\video-js.min.css" />
+    <Content Include="WebControls\ueditor\third-party\video-js\video-js.swf" />
+    <Content Include="WebControls\ueditor\third-party\video-js\video.dev.js" />
+    <Content Include="WebControls\ueditor\third-party\video-js\video.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.css" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="WebControls\ueditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="WebControls\ueditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="WebControls\ueditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="WebControls\ueditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="WebControls\ueditor\ueditor.all.js" />
+    <Content Include="WebControls\ueditor\ueditor.all.min.js" />
+    <Content Include="WebControls\ueditor\ueditor.config.js" />
+    <Content Include="WebControls\ueditor\ueditor.parse.js" />
+    <Content Include="WebControls\ueditor\ueditor.parse.min.js" />
+    <Content Include="WebControls\ueditor\说明.txt" />
+    <Content Include="WebControls\uploadify\Change Log.txt" />
+    <Content Include="WebControls\uploadify\jquery.uploadify.js" />
+    <Content Include="WebControls\uploadify\jquery.uploadify.min.js" />
+    <Content Include="WebControls\uploadify\jquery.uploadify.zh.js" />
+    <Content Include="WebControls\uploadify\jquery.uploadify.zh.min.js" />
+    <Content Include="WebControls\uploadify\license.txt" />
+    <Content Include="WebControls\uploadify\uploadify-cancel.png" />
+    <Content Include="WebControls\uploadify\uploadify.css" />
+    <Content Include="WebControls\uploadify\uploadify.swf" />
+    <Content Include="WebControls\uploadify\__MACOSX\._Change Log.txt" />
+    <Content Include="WebControls\uploadify\__MACOSX\._uploadify.swf" />
+    <Content Include="Main.Master" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
+    <Content Include="WebControls\JPlayer\.gitignore" />
+    <Content Include="WebControls\JPlayer\.jamignore" />
+    <Content Include="WebControls\JPlayer\artwork\jplayer.blue.monday.psd" />
+    <Content Include="WebControls\JPlayer\artwork\jplayer.blue.monday.spirites.psd" />
+    <Content Include="WebControls\JPlayer\artwork\jplayer.circle.player.psd" />
+    <Content Include="WebControls\JPlayer\artwork\jplayer.pink.flag.psd" />
+    <Content Include="WebControls\JPlayer\artwork\jplayer.pink.flag.sprites.psd" />
+    <Content Include="WebControls\JPlayer\bower.json" />
+    <Content Include="WebControls\JPlayer\CHANGELOG.md" />
+    <Content Include="WebControls\JPlayer\CLA.md" />
+    <Content Include="WebControls\JPlayer\composer.json" />
+    <Content Include="WebControls\JPlayer\CONTRIBUTING.md" />
+    <Content Include="WebControls\JPlayer\lib\README.md" />
+    <Content Include="WebControls\JPlayer\MIGRATION.md" />
+    <Content Include="WebControls\JPlayer\package.json" />
+    <Content Include="WebControls\JPlayer\README.md" />
+    <Content Include="WebControls\JPlayer\src\actionscript\happyworm\jPlayer\ConnectManager.as" />
+    <Content Include="WebControls\JPlayer\src\actionscript\happyworm\jPlayer\JplayerEvent.as" />
+    <Content Include="WebControls\JPlayer\src\actionscript\happyworm\jPlayer\JplayerMp3.as" />
+    <Content Include="WebControls\JPlayer\src\actionscript\happyworm\jPlayer\JplayerMp4.as" />
+    <Content Include="WebControls\JPlayer\src\actionscript\happyworm\jPlayer\JplayerRtmp.as" />
+    <Content Include="WebControls\JPlayer\src\actionscript\happyworm\jPlayer\JplayerStatus.as" />
+    <Content Include="WebControls\JPlayer\src\actionscript\Jplayer.as" />
+    <Content Include="WebControls\JPlayer\src\javascript\add-on\.jshintrc" />
+    <Content Include="WebControls\JPlayer\src\javascript\jplayer\.jshintrc" />
+    <Content Include="WebControls\JPlayer\src\javascript\popcorn\.jshintrc" />
+    <Content Include="WebControls\JPlayer\src\skin\blue.monday\scss\jplayer.blue.monday.scss" />
+    <Content Include="WebControls\JPlayer\src\skin\pink.flag\scss\jplayer.pink.flag.scss" />
+    <Content Include="WebControls\Select\css\bootstrap-select.css.map" />
+    <Content Include="WebControls\Select\js\bootstrap-select.js.map" />
+    <Content Include="WebControls\ueditor\net\config.json" />
+    <Content Include="WebControls\ueditor\net\controller.ashx" />
+    <Content Include="WebControls\ueditor\net\Web.config" />
+    <Content Include="WebControls\ueditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="WebControls\ueditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="WebControls\ueditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="WebControls\ueditor\third-party\video-js\font\vjs.woff" />
+    <Content Include="WebControls\uploadify\check-exists.php" />
+    <Content Include="WebControls\uploadify\index.php" />
+    <Content Include="WebControls\uploadify\uploadify.php" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebControls\Datepicker\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Datepicker\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\FlashUploadify.ascx.cs">
+      <DependentUpon>FlashUploadify.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\FlashUploadify.ascx.designer.cs">
+      <DependentUpon>FlashUploadify.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Html5UploadControl.ascx.cs">
+      <DependentUpon>Html5UploadControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Html5UploadControl.ascx.designer.cs">
+      <DependentUpon>Html5UploadControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Html5Upload\Core\UploadModel.cs" />
+    <Compile Include="WebControls\Select\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Select\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Testc.ascx.cs">
+      <DependentUpon>Testc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Testc.ascx.designer.cs">
+      <DependentUpon>Testc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Test\html5upload.aspx.cs">
+      <DependentUpon>html5upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Test\html5upload.aspx.designer.cs">
+      <DependentUpon>html5upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Test\ueeditor.aspx.cs">
+      <DependentUpon>ueeditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Test\ueeditor.aspx.designer.cs">
+      <DependentUpon>ueeditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Test\uploadify.aspx.cs">
+      <DependentUpon>uploadify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Test\uploadify.aspx.designer.cs">
+      <DependentUpon>uploadify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\UEditor.ascx.cs">
+      <DependentUpon>UEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\UEditor.ascx.designer.cs">
+      <DependentUpon>UEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\ueditor\net\App_Code\Config.cs" />
+    <Compile Include="WebControls\ueditor\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="WebControls\ueditor\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="WebControls\ueditor\net\App_Code\Handler.cs" />
+    <Compile Include="WebControls\ueditor\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="WebControls\ueditor\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="WebControls\ueditor\net\App_Code\PathFormater.cs" />
+    <Compile Include="WebControls\ueditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="WebControls\uploadify\Core\UploadifyModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BLL\KANG.BLL\KANG.BLL.csproj">
+      <Project>{1133f4a5-6b0b-4ef5-b2d9-e7767d921848}</Project>
+      <Name>KANG.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\KANG.Common\KANG.Common.csproj">
+      <Project>{a49248a4-5a0e-444b-b95d-a13af3d4a572}</Project>
+      <Name>KANG.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\KANG.Distributed.Session\KANG.Distributed.Session.csproj">
+      <Project>{2497e8c1-fbed-4146-88a0-4e0a3a92c888}</Project>
+      <Name>KANG.Distributed.Session</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MODEL\KANG.MODEL\KANG.MODEL.csproj">
+      <Project>{ee164ddc-5bf6-4125-bee5-42ede50f7b64}</Project>
+      <Name>KANG.MODEL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

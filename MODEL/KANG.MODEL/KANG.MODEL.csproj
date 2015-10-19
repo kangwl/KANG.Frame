@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\DBEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User_MODEL.cs" />
   </ItemGroup>

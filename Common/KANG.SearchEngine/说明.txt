@@ -1,0 +1,8 @@
+﻿基于lucene的全文搜索
+使用：
+DocIndex：用于创建文档索引
+DocSearch：用来查询
+Util：jieba 解析
+Model：搜索模型
+AutoFac：自动化工厂，用于外部调用
+注意：需要在应用目录下加入 Resources(jieba词库)

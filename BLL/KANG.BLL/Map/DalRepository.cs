@@ -13,7 +13,7 @@ namespace KANG.BLL.Map {
         public static IUserOperate<MODEL.User_MODEL> UserDal
         {
             //get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
-            get { return userOperate ?? (userOperate = CreateInstance<KANG.DAL.User_DAL>()); }
+            get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
         }
 
 
