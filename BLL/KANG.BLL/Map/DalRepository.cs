@@ -25,9 +25,5 @@ namespace KANG.BLL.Map {
         private static T CreateInstance<T>() where T : class, new() {
             return new T();
         }
-
-
-
-
     }
 }
