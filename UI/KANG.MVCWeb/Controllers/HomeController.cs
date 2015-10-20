@@ -6,7 +6,8 @@ using System.Web.Mvc;
 
 namespace KANG.MVCWeb.Controllers {
     public class HomeController : Controller {
-        public ActionResult Index() {
+        public ActionResult Index() { 
+            ViewBag.dtnow = DateTime.Now;
             return View();
         }
 

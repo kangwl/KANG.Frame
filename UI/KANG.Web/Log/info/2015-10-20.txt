@@ -5,3 +5,10 @@
 2015-10-20 10:08:58,228 [10] INFO  mylogger - test_key
 2015-10-20 10:10:02,562 [5] INFO  mylogger - test_key
 2015-10-20 10:10:10,933 [4] INFO  mylogger - test_key
+
+
+2015-10-20 16:32:48,816 [16] INFO  mylogger - test_key
+
+2015-10-20 16:32:59,225 [7] INFO  mylogger - test_key
+2015-10-20 16:33:01,788 [9] INFO  mylogger - test_key
+2015-10-20 16:33:02,660 [12] INFO  mylogger - test_key

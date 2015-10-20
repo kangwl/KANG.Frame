@@ -9,7 +9,7 @@ namespace ConsoleApp_WCF {
     class Program {
         static void Main(string[] args) {
             UserServ.UserOperateOf_User_MODELClient userOperate = new UserOperateOf_User_MODELClient();
-            bool success = userOperate.Insert(new User_MODEL());
+            bool success = userOperate.Insert(new User_MODEL() {Name = "sd"});
             Console.WriteLine(success);
             Console.Read();
         }
