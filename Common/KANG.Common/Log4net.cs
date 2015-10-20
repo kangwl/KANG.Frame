@@ -12,53 +12,63 @@ namespace KANG.Common {
         private Log4net(){}
         static Log4net(){}
 
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger("mylogger");
-
+        private static log4net.ILog log;
         /// <summary>
         /// 初始化log4net
         /// </summary>
-        public static void Init(string configXml = "/Config/log4net_n.xml") {
-            string log4config_xml = HttpContext.Current.Server.MapPath(configXml);
+        public static void Init(string loggerName, string configXml) {
+            log = log4net.LogManager.GetLogger(loggerName);
+            string log4config_xml = "";
+            log4config_xml = configXml.Contains(":") ? configXml : HttpContext.Current.Server.MapPath(configXml);
             if (!File.Exists(log4config_xml)) {
                 throw new FileNotFoundException("log4net的配置文件xml不存在", "/Config/log4net_n.xml");
             }
             log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(log4config_xml));
         }
 
-        private static ILog Logger {
-            get {
-                return log;
+        /// <summary>
+        /// 初始化log4net
+        /// </summary>
+        public static void Init(string configXml = "/Config/log4net_n.xml") {
+           
+            log = log4net.LogManager.GetLogger("mylogger");
+            string log4config_xml = "";
+            log4config_xml = configXml.Contains(":") ? configXml : HttpContext.Current.Server.MapPath(configXml);
+            if (!File.Exists(log4config_xml)) {
+                throw new FileNotFoundException("log4net的配置文件xml不存在", "/Config/log4net_n.xml");
             }
+            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(log4config_xml));
         }
 
+
         public static void Debug(dynamic msg) {
-            Logger.Debug(msg);
+            log.Debug(msg);
         }
         public static void Debug(dynamic msg, Exception ex) {
-            Logger.Debug(msg, ex);
+            log.Debug(msg, ex);
         }
 
         public static void Info(dynamic msg) {
-            Logger.Info(msg);
+            log.Info(msg);
         }
 
         public static void Info(dynamic msg,Exception ex) {
-            Logger.Info(msg, ex);
+            log.Info(msg, ex);
         }
 
         public static void Warn(dynamic msg) {
-            Logger.Warn(msg);
+            log.Warn(msg);
         }
         public static void Warn(dynamic msg, Exception ex) {
-            Logger.Warn(msg, ex);
+            log.Warn(msg, ex);
         }
 
         public static void Error(dynamic msg) {
-            Logger.Error(msg);
+            log.Error(msg);
         }
 
         public static void Error(dynamic msg,Exception ex) {
-            Logger.Error(msg, ex);
+            log.Error(msg, ex);
         }
     }
 }

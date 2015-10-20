@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Map\DalRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\CacheService.cs" />
     <Compile Include="User_BLL.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -82,6 +82,7 @@
     <Compile Include="NetHelper.cs" />
     <Compile Include="PictureHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomService.cs" />
     <Compile Include="ScreenShot.cs" />
     <Compile Include="ShortUrl.cs" />
     <Compile Include="SpellHelper.cs" />

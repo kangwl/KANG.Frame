@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace A2DFramework.RandomService
+namespace KANG.Common
 {
     public static class RandomService
     {
@@ -12,51 +8,48 @@ namespace A2DFramework.RandomService
         /// 数字随机数
         /// </summary>
         /// <returns></returns>
-        public static string GetRndNum()
-        {
+        public static string GetRndNum(int len = 4) {
             string code = string.Empty;
             Random random = new Random();
-            for (int i = 0; i < 4; i++)
-            {
+            for (int i = 0; i < len; i++) {
                 code += random.Next(9);
             }
             return code;
         }
+
         /// <summary>
         ///  英文随机
         /// </summary>
         /// <returns></returns>
-        public static string GetRndStr()
-        {
+        public static string GetRndStr(int len = 4) {
             string Vchar = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
             string[] VcArray = Vchar.Split(',');
             string checkCode = string.Empty;
             Random rand = new Random();
-            for (int i = 0; i < 4; i++)
-            {
+            for (int i = 0; i < len; i++) {
                 int t = rand.Next(VcArray.Length);
                 checkCode += VcArray[t];
             }
             return checkCode;
         }
+
         /// <summary>
         /// 中文随机
         /// </summary>
         /// <returns></returns>
-        public static string GetRndCh()
-        {
-            System.Text.Encoding gb = System.Text.Encoding.Default;//获取GB2312编码页（表）
-            object[] bytes = CreateRegionCode(4);//生4个随机中文汉字编码
-            string[] str = new string[4];
+        public static string GetRndCh(int len = 4) {
+            System.Text.Encoding gb = System.Text.Encoding.Default; //获取GB2312编码页（表）
+            object[] bytes = CreateRegionCode(len); //生4个随机中文汉字编码
+            string[] str = new string[len];
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            for (int i = 0; i < 4; i++)
-            {
+            for (int i = 0; i < len; i++) {
                 //根据汉字编码的字节数组解码出中文汉字
-                str[i] = gb.GetString((byte[])Convert.ChangeType(bytes[i], typeof(byte[])));
+                str[i] = gb.GetString((byte[]) Convert.ChangeType(bytes[i], typeof (byte[])));
                 sb.Append(str[i].ToString());
             }
             return sb.ToString();
         }
+
         /// <summary>
         /// 产生随机中文字符
         /// </summary>
