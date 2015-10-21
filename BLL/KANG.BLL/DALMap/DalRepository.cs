@@ -1,6 +1,6 @@
 ﻿using KANG.IDAL;
 
-namespace KANG.BLL.Map {
+namespace KANG.BLL.DALMap {
     /// <summary>
     /// 生成DAL的操作
     /// 可更换数据库
