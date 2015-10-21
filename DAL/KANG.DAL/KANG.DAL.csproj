@@ -57,7 +57,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="数据库SqlServer的DAL.txt" />
+    <Content Include="类型为SqlServer的DAL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
