@@ -1,4 +1,4 @@
-﻿using KANG.BLL.Map;
+﻿using KANG.BLL.DALMap;
 
 namespace KANG.BLL {
 
