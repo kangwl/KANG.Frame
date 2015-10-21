@@ -4,7 +4,7 @@ using KANG.IDAL;
 using KANG.MODEL;
 
 namespace KANG.MySqlDAL {
-    public class User_DAL: IUserOperate<MODEL.User_MODEL>{
+    public class User_DAL: IUser<MODEL.User_MODEL>{
         public bool Insert(User_MODEL t) {
             return true;
         }

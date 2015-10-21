@@ -35,6 +35,7 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.DelayedAutoStart = true;
+            this.serviceInstaller1.Description = "WCF服务";
             this.serviceInstaller1.ServiceName = "WinWCFTest";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 

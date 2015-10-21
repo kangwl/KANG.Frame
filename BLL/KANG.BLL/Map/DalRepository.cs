@@ -8,12 +8,13 @@ namespace KANG.BLL.Map {
     public class DalRepository {
 
 
-        private static IUserOperate<MODEL.User_MODEL> userOperate;
+        private static IUser<MODEL.User_MODEL> userOperate;
 
-        public static IUserOperate<MODEL.User_MODEL> UserDal
+        public static IUser<MODEL.User_MODEL> UserDal
         {
             //get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
-            get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
+            //get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
+            get { return userOperate ?? (userOperate = CreateInstance<KANG.EFDAL.User_DAL>()); }
         }
 
 

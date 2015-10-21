@@ -4,7 +4,7 @@ namespace KANG.BLL {
 
     public class User_BLL {
 
-        public static IDAL.IUserOperate<MODEL.User_MODEL> UserOperate
+        private static IDAL.IUser<MODEL.User_MODEL> UserOperate
         {
             get { return DalRepository.UserDal; }
         }

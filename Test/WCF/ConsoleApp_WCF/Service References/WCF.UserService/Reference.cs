@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApp_WCF.UserServ {
+namespace ConsoleApp_WCF.WCF.UserService {
     using System.Runtime.Serialization;
     using System;
     
@@ -91,62 +91,62 @@ namespace ConsoleApp_WCF.UserServ {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServ.IUserOperateOf_User_MODEL")]
-    public interface IUserOperateOf_User_MODEL {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCF.UserService.UserService")]
+    public interface UserService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserOperateOf_User_MODEL/Insert", ReplyAction="http://tempuri.org/IUserOperateOf_User_MODEL/InsertResponse")]
-        bool Insert(ConsoleApp_WCF.UserServ.User_MODEL t);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserService/Insert", ReplyAction="http://tempuri.org/UserService/InsertResponse")]
+        bool Insert(ConsoleApp_WCF.WCF.UserService.User_MODEL t);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserOperateOf_User_MODEL/Insert", ReplyAction="http://tempuri.org/IUserOperateOf_User_MODEL/InsertResponse")]
-        System.Threading.Tasks.Task<bool> InsertAsync(ConsoleApp_WCF.UserServ.User_MODEL t);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserService/Insert", ReplyAction="http://tempuri.org/UserService/InsertResponse")]
+        System.Threading.Tasks.Task<bool> InsertAsync(ConsoleApp_WCF.WCF.UserService.User_MODEL t);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserOperateOf_User_MODEL/GetList", ReplyAction="http://tempuri.org/IUserOperateOf_User_MODEL/GetListResponse")]
-        ConsoleApp_WCF.UserServ.User_MODEL[] GetList(string where, int pageIndex, int pageSize);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserService/GetList", ReplyAction="http://tempuri.org/UserService/GetListResponse")]
+        ConsoleApp_WCF.WCF.UserService.User_MODEL[] GetList(string where, int pageIndex, int pageSize);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserOperateOf_User_MODEL/GetList", ReplyAction="http://tempuri.org/IUserOperateOf_User_MODEL/GetListResponse")]
-        System.Threading.Tasks.Task<ConsoleApp_WCF.UserServ.User_MODEL[]> GetListAsync(string where, int pageIndex, int pageSize);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserService/GetList", ReplyAction="http://tempuri.org/UserService/GetListResponse")]
+        System.Threading.Tasks.Task<ConsoleApp_WCF.WCF.UserService.User_MODEL[]> GetListAsync(string where, int pageIndex, int pageSize);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IUserOperateOf_User_MODELChannel : ConsoleApp_WCF.UserServ.IUserOperateOf_User_MODEL, System.ServiceModel.IClientChannel {
+    public interface UserServiceChannel : ConsoleApp_WCF.WCF.UserService.UserService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UserOperateOf_User_MODELClient : System.ServiceModel.ClientBase<ConsoleApp_WCF.UserServ.IUserOperateOf_User_MODEL>, ConsoleApp_WCF.UserServ.IUserOperateOf_User_MODEL {
+    public partial class UserServiceClient : System.ServiceModel.ClientBase<ConsoleApp_WCF.WCF.UserService.UserService>, ConsoleApp_WCF.WCF.UserService.UserService {
         
-        public UserOperateOf_User_MODELClient() {
+        public UserServiceClient() {
         }
         
-        public UserOperateOf_User_MODELClient(string endpointConfigurationName) : 
+        public UserServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public UserOperateOf_User_MODELClient(string endpointConfigurationName, string remoteAddress) : 
+        public UserServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public UserOperateOf_User_MODELClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public UserOperateOf_User_MODELClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public bool Insert(ConsoleApp_WCF.UserServ.User_MODEL t) {
+        public bool Insert(ConsoleApp_WCF.WCF.UserService.User_MODEL t) {
             return base.Channel.Insert(t);
         }
         
-        public System.Threading.Tasks.Task<bool> InsertAsync(ConsoleApp_WCF.UserServ.User_MODEL t) {
+        public System.Threading.Tasks.Task<bool> InsertAsync(ConsoleApp_WCF.WCF.UserService.User_MODEL t) {
             return base.Channel.InsertAsync(t);
         }
         
-        public ConsoleApp_WCF.UserServ.User_MODEL[] GetList(string where, int pageIndex, int pageSize) {
+        public ConsoleApp_WCF.WCF.UserService.User_MODEL[] GetList(string where, int pageIndex, int pageSize) {
             return base.Channel.GetList(where, pageIndex, pageSize);
         }
         
-        public System.Threading.Tasks.Task<ConsoleApp_WCF.UserServ.User_MODEL[]> GetListAsync(string where, int pageIndex, int pageSize) {
+        public System.Threading.Tasks.Task<ConsoleApp_WCF.WCF.UserService.User_MODEL[]> GetListAsync(string where, int pageIndex, int pageSize) {
             return base.Channel.GetListAsync(where, pageIndex, pageSize);
         }
     }

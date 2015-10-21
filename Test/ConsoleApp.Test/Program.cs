@@ -14,7 +14,7 @@ namespace ConsoleApp.Test {
             // KANG.BLL.User_BLL.Insert(new User_MODEL());
             //KANG.Common.RandomService.GetRndCh();
             //using (ServiceHost serviceHost = new ServiceHost(typeof (KANG.DAL.User_DAL))) {
-            //    serviceHost.AddServiceEndpoint(typeof (KANG.IDAL.IUserOperate<KANG.MODEL.User_MODEL>),
+            //    serviceHost.AddServiceEndpoint(typeof (KANG.IDAL.IUser<KANG.MODEL.User_MODEL>),
             //        new NetHttpBinding(), new Uri("http://localhost:8882/userservice"));
             //    serviceHost.Open();
             //}
@@ -22,7 +22,7 @@ namespace ConsoleApp.Test {
             //Console.Read();
             //wshttp 较安全
             //using (ServiceHost host = new ServiceHost(typeof(KANG.DAL.User_DAL))) {
-            //    host.AddServiceEndpoint(typeof(KANG.IDAL.IUserOperate<KANG.MODEL.User_MODEL>), new WSHttpBinding(),
+            //    host.AddServiceEndpoint(typeof(KANG.IDAL.IUser<KANG.MODEL.User_MODEL>), new WSHttpBinding(),
             //        "http://127.0.0.1:9988/UserServ");
             //    if (host.Description.Behaviors.Find<ServiceMetadataBehavior>() == null) {
             //        ServiceMetadataBehavior behavior = new ServiceMetadataBehavior();

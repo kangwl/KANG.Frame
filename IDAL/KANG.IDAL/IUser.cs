@@ -2,11 +2,12 @@
 using System.ServiceModel;
 
 namespace KANG.IDAL {
-    [ServiceContract]
-    public interface IUserOperate<T> {
+    [ServiceContract(Name = "UserService")]
+    public interface IUser<TModel> {
         [OperationContract]
-        bool Insert(T t);
+        bool Insert(TModel tModel);
+
         [OperationContract]
-        List<T> GetList(string where, int pageIndex, int pageSize);
+        List<TModel> GetList(string where, int pageIndex = 0, int pageSize = 10);
     }
 }

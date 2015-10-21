@@ -54,3 +54,10 @@
 /packages/Microsoft.AspNet.Mvc.5.2.3/Content
 /packages/Microsoft.AspNet.WebPages.3.2.3/lib/net45
 /packages/AspNetPager.7.5.1.0
+/Common/ConsoleApp.Test/bin/Debug
+/Common/ConsoleApp.Test/obj/Debug
+/DAL/KANG.EFDAL/bin/Debug
+/DAL/KANG.EFDAL/obj/Debug
+/DatabaseFile/KangDB/bin/Debug
+/DatabaseFile/KangDB/obj/Debug
+/Test/WinServiceTool/d/Debug

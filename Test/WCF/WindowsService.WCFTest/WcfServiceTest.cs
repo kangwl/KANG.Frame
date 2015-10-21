@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 using System.ServiceModel.Description;
+using System.ServiceProcess;
 using KANG.Common;
 
 namespace WindowsService.WCFTest {
@@ -15,6 +16,9 @@ namespace WindowsService.WCFTest {
                 serviceHost.Description.Behaviors.Add(new ServiceMetadataBehavior() {
                     HttpGetEnabled = true
                 });
+                serviceHost.Description.Name = "UserService";
+                serviceHost.Description.ConfigurationName = "UserService";
+
                 serviceHost.Opened += (s, e) => {
                     Log4net.Info("start");
                 };

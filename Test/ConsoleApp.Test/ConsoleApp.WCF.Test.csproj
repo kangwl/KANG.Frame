@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{490A1592-905C-4460-BC1B-8476A8F9C9D2}</ProjectGuid>
+    <ProjectGuid>{5FCABB0D-26FA-4B34-880B-BDD383EA5884}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApp_WCF</RootNamespace>
-    <AssemblyName>ConsoleApp_WCF</AssemblyName>
+    <RootNamespace>ConsoleApp.WCF.Test</RootNamespace>
+    <AssemblyName>ConsoleApp.WCF.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,61 +34,44 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\WCF.UserService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
+    <Compile Include="WcfServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\WCF.UserService\ConsoleApp_WCF.WCF.UserService.User_MODEL.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\WCF.UserService\user.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WCF.UserService\user1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WCF.UserService\user2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WCF.UserService\WCF_UserService.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\WCF.UserService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\WCF.UserService\user.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\WCF.UserService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\WCF.UserService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\WCF.UserService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <ProjectReference Include="..\..\Common\KANG.Common\KANG.Common.csproj">
+      <Project>{a49248a4-5a0e-444b-b95d-a13af3d4a572}</Project>
+      <Name>KANG.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\KANG.DAL\KANG.DAL.csproj">
+      <Project>{74860d1e-3fdc-4ddc-ab0f-9d24126a525e}</Project>
+      <Name>KANG.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IDAL\KANG.IDAL\KANG.IDAL.csproj">
+      <Project>{c0452ce4-f315-42b6-8ce2-9cf40e6cfa6a}</Project>
+      <Name>KANG.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MODEL\KANG.MODEL\KANG.MODEL.csproj">
+      <Project>{ee164ddc-5bf6-4125-bee5-42ede50f7b64}</Project>
+      <Name>KANG.MODEL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

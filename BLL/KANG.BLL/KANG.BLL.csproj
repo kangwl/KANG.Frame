@@ -52,6 +52,10 @@
       <Project>{74860d1e-3fdc-4ddc-ab0f-9d24126a525e}</Project>
       <Name>KANG.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\DAL\KANG.EFDAL\KANG.EFDAL.csproj">
+      <Project>{87deab20-82ec-4b63-9b79-3fd87619802c}</Project>
+      <Name>KANG.EFDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DAL\KANG.MySql.DAL\KANG.MySqlDAL.csproj">
       <Project>{c84e5a57-1472-42a7-8318-d0b7100a8911}</Project>
       <Name>KANG.MySqlDAL</Name>
