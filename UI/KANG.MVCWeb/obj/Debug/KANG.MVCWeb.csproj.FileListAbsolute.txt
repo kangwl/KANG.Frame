@@ -10,7 +10,6 @@ C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\roslyn\System.Reflection.Metadata.dll
 C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\roslyn\vbc.exe
 C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\roslyn\VBCSCompiler.exe
 C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\roslyn\VBCSCompiler.exe.config
-C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\KANG.MVCWeb.dll.config
 C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\KANG.MVCWeb.dll
 C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\KANG.MVCWeb.pdb
 C:\Git\KANG.Frame\UI\KANG.MVCWeb\bin\Antlr3.Runtime.dll

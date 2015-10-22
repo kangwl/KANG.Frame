@@ -14,7 +14,7 @@ namespace KANG.EFDAL.Repository {
             modelBuilder.Entity<MODEL.User_MODEL>().Map(map => {
                 map.ToTable("User");//映射数据库表名
             });
-            
+
             base.OnModelCreating(modelBuilder);
         }
     }
