@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DALMap\DalRepository.cs" />
+    <Compile Include="DALMap\DalRepository_0.cs" />
     <Compile Include="DALMap\DalRepository_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User_BLL.cs" />

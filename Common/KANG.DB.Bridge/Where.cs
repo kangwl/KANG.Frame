@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 
 namespace KANG.DB.Bridge {
+    /// <summary>
+    /// 用对象的方式替换string类型的where条件
+    /// </summary>
     public class Where {
         public Where() {
             WherelistLazy = new Lazy<List<string>>();
