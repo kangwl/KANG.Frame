@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 
-namespace DB.MySql {
+namespace MySqlDB {
     /// <summary>
     /// MySqlHelper操作类
     /// </summary>

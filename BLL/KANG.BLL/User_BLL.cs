@@ -7,49 +7,48 @@ namespace KANG.BLL {
 
     public class User_BLL {
 
-        private static IDAL.IUser<MODEL.User_MODEL> UserOperate
-        {
-            get { return DalRepository.UserDal; }
+        private static IDAL.IUser OperateUser {
+            get { return DalRepository.OperateUser; }
         }
 
         public static bool Insert(KANG.MODEL.User_MODEL userModel) {
-            return UserOperate.Insert(userModel);
+            return OperateUser.Insert(userModel);
         }
 
         public static bool Update(KANG.MODEL.User_MODEL userModel) {
-            return UserOperate.Update(userModel);
+            return OperateUser.Update(userModel);
         }
 
         public static bool UpdateName(int id,string name) {
-            return UserOperate.UpdateName(id, name);
+            return OperateUser.UpdateName(id, name);
         }
 
         public static bool UpdateName(MODEL.User_MODEL userModel) {
-            return UserOperate.UpdateName(userModel);
+            return OperateUser.UpdateName(userModel);
         }
 
         public static List<MODEL.User_MODEL> GetList() {
-            return UserOperate.GetList();
+            return OperateUser.GetList();
         }
 
         public static DataTable GetDataTable(string fields) {
-            return UserOperate.GetDataTable(fields);
+            return OperateUser.GetDataTable(fields);
         }
 
         public static bool Delete(int id) {
-            return UserOperate.Delete(id);
+            return OperateUser.Delete(id);
         }
 
         public static bool Delete(MODEL.User_MODEL userModel) {
-            return UserOperate.Delete(userModel);
+            return OperateUser.Delete(userModel);
         }
 
         public static int GetRecordCount(Where objWhere = null) {
-            return UserOperate.GetRecordCount(objWhere);
+            return OperateUser.GetRecordCount(objWhere);
         }
 
         public static bool Exist(Where objWhere) {
-            return UserOperate.GetRecordCount(objWhere) > 0;
+            return OperateUser.GetRecordCount(objWhere) > 0;
         }
 
     }

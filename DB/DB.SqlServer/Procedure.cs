@@ -1,4 +1,4 @@
-﻿namespace DB.SqlServer {
+﻿namespace SqlServerDB {
     /// <summary>
     /// 存储过程
     /// </summary>

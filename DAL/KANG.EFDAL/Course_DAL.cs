@@ -1,30 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using KANG.DAL.BaseOperate;
 using KANG.DB.Bridge;
-using KANG.IDAL;
 using KANG.MODEL;
 
-namespace KANG.DAL {
-    public class User_DAL : BaseDal,IUser {
+namespace KANG.EFDAL {
+    public class Course_DAL : BaseDal, IDAL.ICourse {
         private string _primaryKey;
         private string _tableName;
 
-        public bool Insert(User_MODEL t) {
-            return true;
+        public string PrimaryKey
+        {
+            get { return _primaryKey; }
         }
 
-        public bool Update(User_MODEL model) {
-            
+        public string TableName
+        {
+            get { return _tableName; }
+        }
+
+        public bool Insert(Course_MODEL model) {
             throw new NotImplementedException();
         }
 
-        public bool UpdateName(int id, string name) {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateName(User_MODEL model) {
+        public bool Update(Course_MODEL model) {
             throw new NotImplementedException();
         }
 
@@ -32,15 +35,11 @@ namespace KANG.DAL {
             throw new NotImplementedException();
         }
 
-        public bool Delete(User_MODEL userModel) {
+        public Course_MODEL GetOne(int id) {
             throw new NotImplementedException();
         }
 
-        public User_MODEL GetOne(int id) {
-            throw new NotImplementedException();
-        }
-
-        public List<User_MODEL> GetList(Where objWhere = null, string orderField = null, bool asc = true, int pageIndex = 0, int pageSize = 10) {
+        public List<Course_MODEL> GetList(Where objWhere = null, string orderField = null, bool asc = true, int pageIndex = 0, int pageSize = 10) {
             throw new NotImplementedException();
         }
 
@@ -51,17 +50,6 @@ namespace KANG.DAL {
 
         public int GetRecordCount(Where objWhere = null) {
             throw new NotImplementedException();
-        }
-
-
-        public string PrimaryKey
-        {
-            get { return _primaryKey; }
-        }
-
-        public string TableName
-        {
-            get { return _tableName; }
         }
     }
 }

@@ -42,6 +42,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,15 +55,13 @@
     <Compile Include="..\..\Common\SqlBaseOperate\BaseDal.cs">
       <Link>BaseOperate\BaseDal.cs</Link>
     </Compile>
+    <Compile Include="Course_DAL.cs" />
     <Compile Include="Ext\EFDatabaseExt.cs" />
     <Compile Include="Repository\EFDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Mapping\CourseMap.cs" />
     <Compile Include="Repository\Mapping\UserMap.cs" />
     <Compile Include="User_DAL.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\KANG.DB.Bridge\KANG.DB.Bridge.csproj">

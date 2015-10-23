@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Linq;
 
 using KANG.DAL.BaseOperate;
@@ -11,7 +10,7 @@ using KANG.EFDAL.Repository;
 using KANG.MODEL;
 
 namespace KANG.EFDAL {
-    public class User_DAL : BaseDal, IDAL.IUser<MODEL.User_MODEL> {
+    public class User_DAL : BaseDal, IDAL.IUser{
         private string _primaryKey = "[ID]";
         private string _tableName = "[User]";
 

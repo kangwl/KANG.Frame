@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace DB.SqlServer {
+namespace SqlServerDB {
     public sealed partial class SqlHelper {
         /// <summary>
         /// 批量操作每批次记录数
@@ -301,7 +301,7 @@ namespace DB.SqlServer {
         /// <param name="commandText">SQL语句或存储过程名称</param>
         /// <param name="parms">查询参数</param>
         /// <returns>返回影响的行数</returns>
-        public static int ExecuteNonQuery(SqlConnection connection, CommandType commandType, string commandText,
+        private static int ExecuteNonQuery(SqlConnection connection, CommandType commandType, string commandText,
             params SqlParameter[] parms) {
             return ExecuteNonQuery(connection, null, commandType, commandText, parms);
         }
@@ -314,7 +314,7 @@ namespace DB.SqlServer {
         /// <param name="commandText">SQL语句或存储过程名称</param>
         /// <param name="parms">查询参数</param>
         /// <returns>返回影响的行数</returns>
-        public static int ExecuteNonQuery(SqlTransaction transaction, CommandType commandType, string commandText,
+        private static int ExecuteNonQuery(SqlTransaction transaction, CommandType commandType, string commandText,
             params SqlParameter[] parms) {
             return ExecuteNonQuery(transaction.Connection, transaction, commandType, commandText, parms);
         }

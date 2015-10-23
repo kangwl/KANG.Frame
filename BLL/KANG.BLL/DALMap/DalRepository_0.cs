@@ -8,20 +8,6 @@ namespace KANG.BLL.DALMap {
     /// 可更换数据库
     /// </summary>
     public partial class DalRepository {
-
-
-        private static IUser<MODEL.User_MODEL> userOperate;
-
-        public static IUser<MODEL.User_MODEL> UserDal
-        {
-            //get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
-            //get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
-            get { return userOperate ?? (userOperate = CreateInstance<KANG.EFDAL.User_DAL>()); }
-        }
-
-
-
-
         /// <summary>
         /// 创建操作实例
         /// </summary>
@@ -30,5 +16,25 @@ namespace KANG.BLL.DALMap {
         private static T CreateInstance<T>() where T : class, new() {
             return new T();
         }
+
+
+        private static IUser operateUser;
+
+        public static IUser OperateUser
+        {
+            //get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
+            //get { return userOperate ?? (userOperate = CreateInstance<KANG.MySqlDAL.User_DAL>()); }
+            get { return operateUser ?? (operateUser = CreateInstance<KANG.EFDAL.User_DAL>()); }
+        }
+
+        private static ICourse operateCourse;
+
+        public static ICourse OperateCourse
+        {
+            get { return operateCourse ?? (operateCourse = CreateInstance<EFDAL.Course_DAL>()); }
+        }
+
+
+
     }
 }

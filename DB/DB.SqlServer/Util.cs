@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DB.SqlServer
+namespace SqlServerDB
 {
    public static class SqlReader
    {

@@ -1,4 +1,4 @@
-﻿namespace DB.SqlServer
+﻿namespace SqlServerDB
 {
     public static class ConnectionHelper
     {

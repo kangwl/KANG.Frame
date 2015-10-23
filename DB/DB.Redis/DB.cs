@@ -1,6 +1,6 @@
-﻿using System; 
+﻿using System;
 
-namespace DB.Redis {
+namespace RedisDB {
     public class DB  {
         public bool Insert<T>(T t) {
             return true;

@@ -61,5 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Course.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="KangDB.publish.xml" />
   </ItemGroup>
 </Project>

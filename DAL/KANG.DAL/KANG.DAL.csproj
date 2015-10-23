@@ -50,9 +50,9 @@
       <Project>{0478a60c-5936-4da1-ab9b-b3bcd996ca3d}</Project>
       <Name>KANG.DB.Bridge</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DB\DB.SqlServer\DB.SqlServer.csproj">
+    <ProjectReference Include="..\..\DB\DB.SqlServer\SqlServerDB.csproj">
       <Project>{bedc1353-c292-4d2f-956b-fb3107f387b2}</Project>
-      <Name>DB.SqlServer</Name>
+      <Name>SqlServerDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\IDAL\KANG.IDAL\KANG.IDAL.csproj">
       <Project>{c0452ce4-f315-42b6-8ce2-9cf40e6cfa6a}</Project>

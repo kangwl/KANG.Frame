@@ -9,12 +9,14 @@ using KANG.DB.Bridge;
 
 namespace KANG.DAL.BaseOperate {
     public class BaseDal {
+
+        #region 结合KANG.DB.Bridge使用
         /// <summary>
         /// 生成 where sqlparameter参数
         /// </summary>
         /// <param name="objWhere"></param>
         /// <returns></returns>
-        public  SqlParameter[] CreateWhereSqlParameters(Where objWhere) {
+        public SqlParameter[] CreateWhereSqlParameters(Where objWhere) {
             List<Where.Item> items = objWhere.WhereItems;
             List<SqlParameter> parameters = items.Select(item => new SqlParameter($"@{item.Field}", item.Value)).ToList();
             return parameters.ToArray();
@@ -33,5 +35,6 @@ namespace KANG.DAL.BaseOperate {
             parameters.AddRange(items.Select(item => new SqlParameter($"@{item.Field}", item.Value)));
             return parameters.ToArray();
         }
+        #endregion
     }
 }

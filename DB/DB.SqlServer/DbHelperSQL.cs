@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 
-namespace DB.SqlServer //可以修改成实际项目的命名空间名称 
+namespace SqlServerDB //可以修改成实际项目的命名空间名称 
 {
 
     public class DbHelperSQL

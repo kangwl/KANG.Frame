@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseInterface\IBase.cs" />
+    <Compile Include="ICourse.cs" />
     <Compile Include="IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -48,6 +49,10 @@
     <ProjectReference Include="..\..\Common\KANG.DB.Bridge\KANG.DB.Bridge.csproj">
       <Project>{0478a60c-5936-4da1-ab9b-b3bcd996ca3d}</Project>
       <Name>KANG.DB.Bridge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MODEL\KANG.MODEL\KANG.MODEL.csproj">
+      <Project>{ee164ddc-5bf6-4125-bee5-42ede50f7b64}</Project>
+      <Name>KANG.MODEL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
