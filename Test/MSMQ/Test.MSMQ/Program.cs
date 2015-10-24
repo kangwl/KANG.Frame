@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Messaging;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Test.MSMQ {
@@ -11,7 +14,8 @@ namespace Test.MSMQ {
         private static string _msmqPath = @".\Private$\kangMSMQ";
         public static string _msmqTransPath = @".\Private$\kangTransMSMQ";
         static void Main(string[] args) {
-            SendMessage();
+            Task.Factory.StartNew(SendMessage);
+            Console.WriteLine("okkkkkkkkkkkkk");
             //RecieveMessage();
             Console.Read();
         }
@@ -24,40 +28,57 @@ namespace Test.MSMQ {
             //message.Body = "kangwl";
             //message.Priority = MessagePriority.High;
             //messageQueue.Send(message);
+
+
             MSMQHelper.MessageModel<string> messageModel=new MSMQHelper.MessageModel<string>();
             messageModel.Data = "kwl123";
             messageModel.Label = "message1";
-            using (MSMQHelper msmqHelper = new MSMQHelper(_msmqPath)) {
-                msmqHelper.SendMessage(messageModel);
-                //msmqHelper.SendMessages(new List<MSMQHelper.MessageModel<string>>() {messageModel, messageModel, messageModel, messageModel, messageModel });
-                Console.WriteLine("send success");
-            }
-        }
-
-        private static void RecieveMessage() {
-            //MessageQueue messageQueue = InitMSMQ(_msmqPath);
-
-            //messageQueue.MessageReadPropertyFilter.Priority = true;
-            //Message message = messageQueue.Receive();
-            //message.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
-            //Console.WriteLine(message.Body);
-
             MSMQHelper msmqHelper = new MSMQHelper(_msmqPath);
-            //IEnumerable<MSMQHelper.MessageModel<string>> data = msmqHelper.RecieveMuti<string>();
-            //foreach (MSMQHelper.MessageModel<string> model in data) {
-            //    Console.WriteLine(model.Data);
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            //var re = Parallel.For(0, 10000, (i, s) => {
+            //    msmqHelper.SendMessage(messageModel);
+            //    Console.WriteLine(i);
+            //});
+
+            var re = Parallel.ForEach(Partitioner.Create(0, 20000), (a, b, c) => {
+                for (int i = a.Item1; i < a.Item2; i++) {
+                    msmqHelper.SendMessage(messageModel);
+                    Console.WriteLine(i);
+                }
+            });
+            //for (int i = 0; i < 20000; i++) {
+            //    msmqHelper.SendMessage(messageModel);
+            //    Console.WriteLine(i);
             //}
-            msmqHelper.RecieveAsync<string>(one => { Console.WriteLine(one.Data); });
+            //stopwatch.Stop();
+            //Console.WriteLine("send ok");
+            //Console.WriteLine(stopwatch.ElapsedMilliseconds);
+            if (re.IsCompleted) {
+
+
+                Console.WriteLine("send ok");
+                Console.WriteLine(stopwatch.ElapsedMilliseconds);
+                msmqHelper.Dispose();
+            }
+
+            //msmqHelper.SendMessages(new List<MSMQHelper.MessageModel<string>>() {messageModel, messageModel, messageModel, messageModel, messageModel });
+            //Console.WriteLine("send success");
         }
 
-        private static MessageQueue InitMSMQ(string msmqPath) {
-            //  queue = new MessageQueue(@"Formatname:DIRECT=tcp:192.168.1.200\private$\OrgMngUserOprtLog");
-            MessageQueue messageQueue = null;
-            messageQueue = !MessageQueue.Exists(msmqPath) ? MessageQueue.Create(msmqPath) : new MessageQueue(msmqPath);
-            return messageQueue;
+            //using (MSMQHelper msmqHelper = new MSMQHelper(_msmqTransPath,true)) {
+            //    Console.WriteLine(msmqHelper.IsTransQueue);
+            //    bool success = msmqHelper.SendMessageTran(messageModel);
+            //    Console.WriteLine(success);
+            //}
         }
+       
+ 
+ 
+ 
 
-    }
+    
 
 
      
