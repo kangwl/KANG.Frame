@@ -14,7 +14,7 @@ namespace Test.MSMQ.Recieve {
         
             Console.Read();
         }
-
+       static int count = 0;
         private static void RecieveMessage() {
             //MessageQueue messageQueue = InitMSMQ(_msmqPath);
 
@@ -23,12 +23,12 @@ namespace Test.MSMQ.Recieve {
             //message.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
             //Console.WriteLine(message.Body);
 
-            MSMQHelper msmqHelper = new MSMQHelper(_msmqPath);
+            //  MSMQHelper msmqHelper = new MSMQHelper(_msmqPath);
             //IEnumerable<MSMQHelper.MessageModel<string>> data = msmqHelper.RecieveMuti<string>();
             //foreach (MSMQHelper.MessageModel<string> model in data) {
             //    Console.WriteLine(model.Data);
             //}
-            int count=0;
+
             //IEnumerable<MSMQHelper.MessageModel<string>> dataeEnumerable = msmqHelper.ReceiveMutiThenDelete<string>();
             //foreach (MSMQHelper.MessageModel<string> messageModel in dataeEnumerable) {
             //    count++;
@@ -36,10 +36,23 @@ namespace Test.MSMQ.Recieve {
             //}
             msmqHelper.ReceiveAsync<string>(one => {
                 count++;
-                Console.WriteLine(count);
+                Console.WriteLine(one.Data);
             });//异步操作，不会阻塞
-            //Console.WriteLine(msmqHelper.Recieve<string>().Data);//同步操作会阻塞主线程
+               // Parallel.Invoke(()=>Rec(1));
+               // Task.Factory.StartNew(() => Rec(1));
+               //Console.WriteLine(msmqHelper.Recieve<string>().Data);//同步操作会阻塞主线程
             Console.WriteLine(123);
+        }
+       static MSMQHelper msmqHelper = new MSMQHelper(_msmqPath);
+        private static List<int> ints = new List<int>(); 
+        private static void Rec(int id) {
+
+            IEnumerable<MSMQHelper.MessageModel<string>> dataeEnumerable = msmqHelper.ReceiveMutiThenDelete<string>();
+            foreach (MSMQHelper.MessageModel<string> messageModel in dataeEnumerable) {
+                count++;
+                Console.WriteLine(id+"."+count+"."+messageModel.Data);
+            }
+            // Console.WriteLine(count++);
         }
     }
 }

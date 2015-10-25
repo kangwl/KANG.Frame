@@ -31,37 +31,40 @@ namespace Test.MSMQ {
 
 
             MSMQHelper.MessageModel<string> messageModel=new MSMQHelper.MessageModel<string>();
-            messageModel.Data = "kwl123";
-            messageModel.Label = "message1";
+          
             MSMQHelper msmqHelper = new MSMQHelper(_msmqPath);
 
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            //var re = Parallel.For(0, 10000, (i, s) => {
+            //Stopwatch stopwatch = new Stopwatch();
+            //stopwatch.Start();
+            //var re = Parallel.For(0, 30, (i, s) => {
+            //    messageModel.Data = "k"+i;
+            //    messageModel.Label = "message1";
             //    msmqHelper.SendMessage(messageModel);
             //    Console.WriteLine(i);
             //});
 
-            var re = Parallel.ForEach(Partitioner.Create(0, 20000), (a, b, c) => {
-                for (int i = a.Item1; i < a.Item2; i++) {
-                    msmqHelper.SendMessage(messageModel);
-                    Console.WriteLine(i);
-                }
-            });
-            //for (int i = 0; i < 20000; i++) {
-            //    msmqHelper.SendMessage(messageModel);
-            //    Console.WriteLine(i);
-            //}
+            //var re = Parallel.ForEach(Partitioner.Create(0, 20000), (a, b, c) => {
+            //    for (int i = a.Item1; i < a.Item2; i++) {
+            //        msmqHelper.SendMessage(messageModel);
+            //        Console.WriteLine(i);
+            //    }
+            //});
+            for (int i = 0; i < 20; i++) {
+                messageModel.Data = "k" + i;
+                messageModel.Label = "message1";
+                msmqHelper.SendMessage(messageModel);
+                Console.WriteLine(i);
+            }
             //stopwatch.Stop();
             //Console.WriteLine("send ok");
             //Console.WriteLine(stopwatch.ElapsedMilliseconds);
-            if (re.IsCompleted) {
+            //if (re.IsCompleted) {
 
 
-                Console.WriteLine("send ok");
-                Console.WriteLine(stopwatch.ElapsedMilliseconds);
-                msmqHelper.Dispose();
-            }
+            //    Console.WriteLine("send ok");
+            //    Console.WriteLine(stopwatch.ElapsedMilliseconds);
+            //    msmqHelper.Dispose();
+            //}
 
             //msmqHelper.SendMessages(new List<MSMQHelper.MessageModel<string>>() {messageModel, messageModel, messageModel, messageModel, messageModel });
             //Console.WriteLine("send success");
