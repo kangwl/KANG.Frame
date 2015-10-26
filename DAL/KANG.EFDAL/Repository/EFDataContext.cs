@@ -8,6 +8,7 @@ namespace KANG.EFDAL.Repository {
         }
 
         public DbSet<MODEL.User_MODEL> User { get; set; }
+        public DbSet<MODEL.Course_MODEL> Course { get; set; } 
 
 
 
@@ -19,6 +20,7 @@ namespace KANG.EFDAL.Repository {
             //});
             //独立配置
             modelBuilder.Configurations.Add(new Mapping.UserMap());
+            modelBuilder.Configurations.Add(new Mapping.CourseMap());
             base.OnModelCreating(modelBuilder);
         }
     }

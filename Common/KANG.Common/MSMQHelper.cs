@@ -210,25 +210,6 @@ public class MSMQHelper : IDisposable {
         }
     }
 
-    private Message Convert2Message<TModel>(MessageModel<TModel> messageModel) {
-        Message message = new Message {
-            Label = messageModel.Label,
-            Body = messageModel.Data
-        };
-
-        return message;
-    }
-
-    private MessageModel<TModel> Convert2MessageModel<TModel>(Message message) {
-        if (message == null) return null;
-        message.Formatter = new XmlMessageFormatter(new[] {typeof (TModel)});
-        MessageModel<TModel> messageModel = new MessageModel<TModel> {
-            Data = (TModel) message.Body,
-            Label = message.Label
-        };
-        return messageModel;
-    }
-
     /// <summary>
     /// 返回消息，异步操作，不会阻塞
     /// 实时性
@@ -251,5 +232,25 @@ public class MSMQHelper : IDisposable {
     public void Dispose() {
         MQ.Close();
         MQ.Dispose();
+    }
+
+
+    private Message Convert2Message<TModel>(MessageModel<TModel> messageModel) {
+        Message message = new Message {
+            Label = messageModel.Label,
+            Body = messageModel.Data
+        };
+
+        return message;
+    }
+
+    private MessageModel<TModel> Convert2MessageModel<TModel>(Message message) {
+        if (message == null) return null;
+        message.Formatter = new XmlMessageFormatter(new[] { typeof(TModel) });
+        MessageModel<TModel> messageModel = new MessageModel<TModel> {
+            Data = (TModel)message.Body,
+            Label = message.Label
+        };
+        return messageModel;
     }
 }

@@ -28,15 +28,18 @@ namespace ConsoleApp.Test {
             //Console.WriteLine(Encoding.UTF8.GetString(HttpServerUtility.UrlTokenDecode("5bq35paH56uL0")));
             //int count = User_BLL.GetRecordCount();
             //Console.WriteLine(count);
-            Task task = Task.Factory.StartNew(() => { printNum(); });
-            
-            Console.WriteLine(task.IsCompleted);
+            //Task task = Task.Factory.StartNew(() => { printNum(); });
+            //Console.WriteLine(task.IsCompleted);
+
+            //Console.WriteLine(ctest.GetAwaiter().GetResult());
             Console.ReadLine();
         }
 
         public static void printNum() {
             Console.WriteLine(123);
         }
+
+
 
      
     }

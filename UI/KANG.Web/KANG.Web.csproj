@@ -91,6 +91,7 @@
     <Content Include="Scripts\myJQDialog.js" />
     <Content Include="Scripts\myJQDrag.js" />
     <Content Include="Scripts\myJQUtils.js" />
+    <Content Include="Scripts\placeholder.fix.js" />
     <Content Include="Scripts\replaceElementUtil.js" />
     <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.css" />
     <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.min.css" />
