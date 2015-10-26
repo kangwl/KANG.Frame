@@ -4,13 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA8FE8F8-3D14-4572-A9F9-4D02A60E1890}</ProjectGuid>
+    <ProjectGuid>{0119B980-8001-4C6A-9E36-2DD2156DB1FB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test.MSMQ</RootNamespace>
-    <AssemblyName>Test.MSMQ</AssemblyName>
+    <RootNamespace>Test.MSMQ.Recieve</RootNamespace>
+    <AssemblyName>Test.MSMQ.Recieve</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>

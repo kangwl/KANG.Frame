@@ -24,11 +24,18 @@ namespace ConsoleApp.Test {
            // rows.ForEach(one => Console.WriteLine(one.Name));
             //DataTable dt = User_BLL.GetDataTable("[Name]");
            // bool success = User_BLL.Delete(new User_MODEL() {ID = 2});
-            Console.WriteLine(HttpServerUtility.UrlTokenEncode(Encoding.UTF8.GetBytes("康文立")));
-            Console.WriteLine(Encoding.UTF8.GetString(HttpServerUtility.UrlTokenDecode("5bq35paH56uL0")));
-            int count = User_BLL.GetRecordCount();
-            Console.WriteLine(count);
+            //Console.WriteLine(HttpServerUtility.UrlTokenEncode(Encoding.UTF8.GetBytes("康文立")));
+            //Console.WriteLine(Encoding.UTF8.GetString(HttpServerUtility.UrlTokenDecode("5bq35paH56uL0")));
+            //int count = User_BLL.GetRecordCount();
+            //Console.WriteLine(count);
+            Task task = Task.Factory.StartNew(() => { printNum(); });
+            
+            Console.WriteLine(task.IsCompleted);
             Console.ReadLine();
+        }
+
+        public static void printNum() {
+            Console.WriteLine(123);
         }
 
      
