@@ -27,6 +27,11 @@ namespace KANG.DB.Bridge {
             WherelistLazy.Value.Add($"{item.Field}{item.Sign}@{item.Field}");
             return this;
         }
+
+        public void AddRange(List<Item> items) {
+            items.ForEach(one => Add(one));
+        }
+
         public int Count => WherelistLazy.Value.Count;
         private Lazy<List<string>> WherelistLazy { get; set; }
 

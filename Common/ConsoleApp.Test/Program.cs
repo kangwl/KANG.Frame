@@ -34,7 +34,9 @@ namespace ConsoleApp.Test {
             //Console.WriteLine(task.IsCompleted);
 
             //Console.WriteLine(ctest.GetAwaiter().GetResult());
-            var list = User_BLL.GetList(new Where(new Where.Item("ID", "=", 1)));
+            Where objWhere = new Where();
+            objWhere.AddRange(new List<Where.Item>() {new Where.Item("ID", "=", 1)});
+            var list = User_BLL.GetList(objWhere);
             Console.WriteLine(list.Count);
             Console.WriteLine(list[0].Name);
             Console.ReadLine();
