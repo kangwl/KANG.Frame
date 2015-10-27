@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using KANG.BLL;
+using KANG.DB.Bridge;
 using KANG.MODEL;
 
 namespace ConsoleApp.Test {
@@ -13,7 +14,8 @@ namespace ConsoleApp.Test {
         static void Main(string[] args) {
            // bool success = User_BLL.Insert(new User_MODEL() {Name = "kangwl", Age = 22});
             //bool success = User_BLL.Update(new User_MODEL() {ID = 1,Name = "k", Age = 111});
-            //bool success = User_BLL.UpdateName(1, "kangwl");
+          //  bool success = User_BLL.UpdateName(1, "kangwl");
+          //  Console.WriteLine(success);
             //User_MODEL userModel = new User_MODEL() {ID = 1, Name = "kangwl", Age = 111};
             //userModel.Name = "kwl";
             //userModel.Age = 12;
@@ -32,6 +34,9 @@ namespace ConsoleApp.Test {
             //Console.WriteLine(task.IsCompleted);
 
             //Console.WriteLine(ctest.GetAwaiter().GetResult());
+            var list = User_BLL.GetList(new Where(new Where.Item("ID", "=", 1)));
+            Console.WriteLine(list.Count);
+            Console.WriteLine(list[0].Name);
             Console.ReadLine();
         }
 

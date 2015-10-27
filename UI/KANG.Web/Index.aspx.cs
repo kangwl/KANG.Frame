@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 namespace KANG.Web {
     public partial class Index : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
+            Response.Write(HttpUtility.HtmlEncode("<script>alert('ok')</script>"));
         }
     }
 }

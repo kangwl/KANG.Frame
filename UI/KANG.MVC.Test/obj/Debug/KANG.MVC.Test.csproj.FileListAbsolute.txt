@@ -41,8 +41,6 @@ C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\EntityFramework.dll
 C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\EntityFramework.SqlServer.dll
 C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\EntityFramework.xml
 C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\EntityFramework.SqlServer.xml
-C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\zh-Hans\EntityFramework.resources.dll
-C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
 E:\QuickVisit\Document\GITProject\KANG.Frame\UI\KANG.MVC.Test\bin\roslyn\csc.exe
 E:\QuickVisit\Document\GITProject\KANG.Frame\UI\KANG.MVC.Test\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 E:\QuickVisit\Document\GITProject\KANG.Frame\UI\KANG.MVC.Test\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll

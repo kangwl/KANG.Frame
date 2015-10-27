@@ -8,8 +8,8 @@ using KANG.MODEL;
 
 namespace KANG.DAL {
     public class User_DAL : BaseDal,IUser {
-        private string _primaryKey;
-        private string _tableName;
+        private string _primaryKey="[ID]";
+        private string _tableName="[User]";
 
         public bool Insert(User_MODEL t) {
             return true;

@@ -27,8 +27,9 @@ namespace KANG.BLL {
             return OperateUser.UpdateName(userModel);
         }
 
-        public static List<MODEL.User_MODEL> GetList() {
-            return OperateUser.GetList();
+        public static List<MODEL.User_MODEL> GetList(Where objWhere = null, string orderField = null, bool asc = true,
+            int pageIndex = 0, int pageSize = 10) {
+            return OperateUser.GetList(objWhere, orderField, asc, pageIndex, pageSize);
         }
 
         public static DataTable GetDataTable(string fields) {
