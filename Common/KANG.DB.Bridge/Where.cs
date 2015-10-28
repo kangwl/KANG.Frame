@@ -24,7 +24,7 @@ namespace KANG.DB.Bridge {
         /// <returns></returns>
         public Where Add(Item item) {
             WhereItems.Add(item);
-            WherelistLazy.Value.Add($"{item.Field}{item.Sign}@{item.Field}");
+            WherelistLazy.Value.Add($"[{item.Field}] {item.Sign} @{item.Field}");
             return this;
         }
 

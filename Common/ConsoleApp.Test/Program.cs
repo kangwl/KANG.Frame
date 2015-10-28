@@ -35,7 +35,11 @@ namespace ConsoleApp.Test {
 
             //Console.WriteLine(ctest.GetAwaiter().GetResult());
             Where objWhere = new Where();
-            objWhere.AddRange(new List<Where.Item>() {new Where.Item("ID", "=", 1)});
+            List<Where.Item> items = new List<Where.Item>();
+            items.Add(new Where.Item("ID", "LIKE", "%1%"));
+            items.Add(new Where.Item("Name", "LIKE", "%k%"));
+            items.Add(new Where.Item("Age", "=", 111));
+            objWhere.AddRange(items);
             var list = User_BLL.GetList(objWhere);
             Console.WriteLine(list.Count);
             Console.WriteLine(list[0].Name);

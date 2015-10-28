@@ -123,6 +123,7 @@ namespace KANG.EFDAL {
                     ? dataContext.Database.SqlQuery<MODEL.User_MODEL>(sqlPage)
                         //.Select(data => new User_MODEL() {Name = data.Name})//选取需要的字段
                         .ToList()
+                        
                     : dataContext.Database.SqlQuery<MODEL.User_MODEL>(sqlPage, CreateWhereSqlParameters(objWhere))
                         //.Select(data => new User_MODEL() {Name = data.Name})
                         .ToList();
