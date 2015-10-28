@@ -21,9 +21,6 @@ namespace KANG.IDAL.BaseInterface {
         List<TModel> GetList(Where objWhere = null, string orderField = null, bool asc = true,
             int pageIndex = 0, int pageSize = 10);
 
-        DataTable GetDataTable(string fields = "*", Where objWhere = null, string orderField = null, bool asc = true,
-            int pageIndex = 0, int pageSize = 10);
-
         int GetRecordCount(Where objWhere = null);
     }
 }

@@ -4,7 +4,7 @@ using KANG.IDAL;
 namespace KANG.BLL.DALMap {
 
     /// <summary>
-    /// 生成DAL的操作
+    /// 生成DAL的操作对象
     /// 可更换数据库
     /// </summary>
     public partial class DalRepository {

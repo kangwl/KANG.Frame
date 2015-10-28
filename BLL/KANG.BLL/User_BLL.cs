@@ -4,7 +4,9 @@ using KANG.BLL.DALMap;
 using KANG.DB.Bridge;
 
 namespace KANG.BLL {
-
+    /// <summary>
+    /// user service
+    /// </summary>
     public class User_BLL {
 
         private static IDAL.IUser OperateUser {

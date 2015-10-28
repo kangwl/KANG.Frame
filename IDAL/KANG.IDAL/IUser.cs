@@ -17,5 +17,7 @@ namespace KANG.IDAL {
 
         bool Delete(MODEL.User_MODEL userModel);
 
+        DataTable GetDataTable(string fields = "*", Where objWhere = null, string orderField = null, bool asc = true,
+            int pageIndex = 0, int pageSize = 10);
     }
 }
