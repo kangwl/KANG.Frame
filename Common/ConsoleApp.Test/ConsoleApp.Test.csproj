@@ -85,9 +85,9 @@
       <Project>{ee164ddc-5bf6-4125-bee5-42ede50f7b64}</Project>
       <Name>KANG.MODEL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\UI\KANG.Web\KANG.Web.csproj">
-      <Project>{7ee6cdc3-6524-4715-bd57-ff863bfd925c}</Project>
-      <Name>KANG.Web</Name>
+    <ProjectReference Include="..\KANG.Common\KANG.Common.csproj">
+      <Project>{a49248a4-5a0e-444b-b95d-a13af3d4a572}</Project>
+      <Name>KANG.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\KANG.DB.Bridge\KANG.DB.Bridge.csproj">
       <Project>{0478A60C-5936-4DA1-AB9B-B3BCD996CA3D}</Project>

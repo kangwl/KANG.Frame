@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using KANG.Common;
 using KANG.Redis.Extension;
 using StackExchange.Redis;
 
 namespace KANG.Redis {
-    public class RedisCommon : IDisposable {
+    public partial class RedisCommon : IDisposable {
 
-        public RedisCommon(string host, int port, string password = "") {
+        public RedisCommon(string host="127.0.0.1", int port = 6379, string password = "") {
             options = new ConfigurationOptions {
                 AllowAdmin = true,
-                EndPoints = { new IPEndPoint(IPAddress.Parse(host), port) },
+                EndPoints = {new IPEndPoint(IPAddress.Parse(host), port)},
                 Password = password
             };
         }
@@ -296,11 +294,6 @@ namespace KANG.Redis {
 
         }
 
-        private  RedisValue GetRedisVal(string str) {
-            RedisValue redisValue = str;
-            return redisValue;
-        }
-
         #endregion
 
         #region string
@@ -314,6 +307,34 @@ namespace KANG.Redis {
             RedisValue redisValue = Db.StringGet(key);
             return redisValue.ToStringExt();
         }
+        #endregion
+
+        #region sub/pub
+
+        /// <summary>
+        /// 订阅消息
+        /// </summary>
+        /// <param name="channelName">订阅的频道</param>
+        /// <param name="handlerAction">回调委托</param>
+        public void Subscribe(string channelName, Action<string, dynamic> handlerAction) {
+            ISubscriber subscriber = connection.GetSubscriber();
+            subscriber.Subscribe(channelName, (channel, value) => {
+                handlerAction(channelName, value);
+            });
+        }
+
+        /// <summary>
+        /// 发布消息
+        /// </summary>
+        /// <param name="channelName">订阅的频道</param>
+        /// <param name="message">消息内容</param>
+        /// <returns></returns>
+        public long Publish(string channelName, dynamic message) {
+            ISubscriber subscriber = connection.GetSubscriber();
+            return subscriber.Publish(channelName, message);
+        }
+
+
         #endregion
 
         public void Dispose() {

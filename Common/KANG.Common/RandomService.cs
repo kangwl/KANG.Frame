@@ -5,6 +5,21 @@ namespace KANG.Common
     public static class RandomService
     {
         /// <summary>
+        /// 随机数种子值
+        /// </summary>
+        public static int RandomSeed
+        {
+            get
+            {
+                byte[] bytes = new byte[4];
+                System.Security.Cryptography.RNGCryptoServiceProvider rng =
+                    new System.Security.Cryptography.RNGCryptoServiceProvider();
+                rng.GetBytes(bytes);
+                return BitConverter.ToInt32(bytes, 0);
+            }
+        }
+
+        /// <summary>
         /// 数字随机数
         /// </summary>
         /// <returns></returns>
@@ -16,6 +31,7 @@ namespace KANG.Common
             }
             return code;
         }
+
 
         /// <summary>
         ///  英文随机

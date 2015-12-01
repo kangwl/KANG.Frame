@@ -2,6 +2,7 @@
 using System.Data;
 using KANG.BLL.DALMap;
 using KANG.DB.Bridge;
+using KANG.EFDAL.Repository;
 
 namespace KANG.BLL {
     /// <summary>
@@ -53,7 +54,7 @@ namespace KANG.BLL {
         public static bool Exist(Where objWhere) {
             return OperateUser.GetRecordCount(objWhere) > 0;
         }
-
+ 
     }
 
  

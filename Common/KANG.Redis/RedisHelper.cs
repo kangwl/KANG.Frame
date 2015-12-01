@@ -14,7 +14,7 @@ namespace KANG.Redis {
     public class RedisHelper {
 
         #region main
-        private static string host = "127.0.0.1";
+        public static string host = "127.0.0.1";
         private static int port = 6379;
         private static string password = "";
         //string host = "192.168.1.78", int port = 6379, string password = ""

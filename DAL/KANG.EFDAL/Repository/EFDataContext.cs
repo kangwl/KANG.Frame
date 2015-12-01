@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 
 namespace KANG.EFDAL.Repository {
-    internal class EFDataContext : DbContext {
+    public class EFDataContext : DbContext {
         public EFDataContext(string nameOrConnstring = "defaultConn") : base(nameOrConnstring) {
             //采用db first
             Database.SetInitializer(new NullDatabaseInitializer<EFDataContext>());
