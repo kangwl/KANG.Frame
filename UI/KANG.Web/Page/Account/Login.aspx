@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" Async="true" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="KANG.Web.Page.Account.Login" %>
  <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+ 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel panel-default">
@@ -12,8 +13,8 @@
             <asp:TextBox runat="server" ID="txt_Content" style="height: 100px" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
         </div>
         <div class="panel-footer">
+            <button id="btn_s" type="button">show</button>
             <asp:Button runat="server" ID="btn_Show" CssClass="btn btn-primary" Text="显示" OnClick="btn_Show_Click"/>
         </div>
     </div>
-
 </asp:Content>

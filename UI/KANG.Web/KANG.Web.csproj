@@ -93,6 +93,10 @@
     <Content Include="Scripts\myJQUtils.js" />
     <Content Include="Scripts\placeholder.fix.js" />
     <Content Include="Scripts\replaceElementUtil.js" />
+    <Content Include="Test\CodeRain\CodeRain.aspx" />
+    <Content Include="Test\CodeRain\index.html" />
+    <Content Include="Test\CodeRain\HackRain.aspx" />
+    <Content Include="Test\Redis\Publish.aspx" />
     <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.css" />
     <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.min.css" />
     <Content Include="WebControls\Datepicker\css\bootstrap-datepicker.standalone.css" />
@@ -636,6 +640,9 @@
     <Content Include="WebControls\uploadify\__MACOSX\._Change Log.txt" />
     <Content Include="WebControls\uploadify\__MACOSX\._uploadify.swf" />
     <Content Include="Main.Master" />
+    <Content Include="CodeRain.Master" />
+    <None Include="Properties\PublishProfiles\leet - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\leet - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -684,6 +691,13 @@
     <Content Include="WebControls\uploadify\uploadify.php" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeRain.Master.cs">
+      <DependentUpon>CodeRain.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CodeRain.Master.designer.cs">
+      <DependentUpon>CodeRain.Master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -709,6 +723,27 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\CodeRain\CodeRain.aspx.cs">
+      <DependentUpon>CodeRain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\CodeRain\CodeRain.aspx.designer.cs">
+      <DependentUpon>CodeRain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\CodeRain\HackRain.aspx.cs">
+      <DependentUpon>HackRain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\CodeRain\HackRain.aspx.designer.cs">
+      <DependentUpon>HackRain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Redis\Publish.aspx.cs">
+      <DependentUpon>Publish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\Redis\Publish.aspx.designer.cs">
+      <DependentUpon>Publish.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebControls\Datepicker\test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -805,6 +840,10 @@
       <Project>{2497e8c1-fbed-4146-88a0-4e0a3a92c888}</Project>
       <Name>KANG.Distributed.Session</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\KANG.Office\KANG.Office.csproj">
+      <Project>{26e0e507-6937-4531-8e14-d7fe28a8e693}</Project>
+      <Name>KANG.Office</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\KANG.Redis\KANG.Redis.csproj">
       <Project>{8a05e84b-665c-49c5-82bb-255e1e6d99d9}</Project>
       <Name>KANG.Redis</Name>
@@ -813,6 +852,9 @@
       <Project>{ee164ddc-5bf6-4125-bee5-42ede50f7b64}</Project>
       <Name>KANG.MODEL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Office\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
