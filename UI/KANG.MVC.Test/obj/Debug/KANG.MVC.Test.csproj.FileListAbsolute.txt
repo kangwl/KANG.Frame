@@ -80,3 +80,5 @@ E:\QuickVisit\Document\GITProject\KANG.Frame\UI\KANG.MVC.Test\bin\zh-Hans\System
 E:\QuickVisit\Document\GITProject\KANG.Frame\UI\KANG.MVC.Test\obj\Debug\KANG.MVC.Test.csprojResolveAssemblyReference.cache
 E:\QuickVisit\Document\GITProject\KANG.Frame\UI\KANG.MVC.Test\obj\Debug\KANG.MVC.Test.dll
 E:\QuickVisit\Document\GITProject\KANG.Frame\UI\KANG.MVC.Test\obj\Debug\KANG.MVC.Test.pdb
+C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\zh-Hans\EntityFramework.resources.dll
+C:\Git\KANG.Frame\UI\KANG.MVC.Test\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
